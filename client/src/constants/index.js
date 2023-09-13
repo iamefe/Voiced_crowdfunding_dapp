@@ -19,6 +19,13 @@ export const navlinks = [
     link: "/create-campaign",
   },
   {
+    name: "profile",
+    imgUrl: profile,
+    link: "/profile",
+  },
+
+  /*
+  {
     name: "payment",
     imgUrl: payment,
     link: "/",
@@ -30,15 +37,13 @@ export const navlinks = [
     link: "/",
     disabled: true,
   },
-  {
-    name: "profile",
-    imgUrl: profile,
-    link: "/profile",
-  },
+
   {
     name: "logout",
     imgUrl: logout,
     link: "/",
     disabled: true,
   },
+
+  */
 ];

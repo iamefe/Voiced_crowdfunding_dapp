@@ -40,7 +40,7 @@ const Sidebar = () => {
   // of this state code block.
 
   return (
-    <div className="flex justify-between items-center flex-col sticky top-5 h-[93vh]">
+    <div className="flex justify-between items-center flex-col sticky top-5 h-[48vh]">
       {/* Product's logo */}
       <Link to="/">
         <Icon styles="w-[52px] h-[52px] bg-[#2c2f32]" imgUrl={logo} />
@@ -69,7 +69,7 @@ const Sidebar = () => {
           ))}
         </div>
 
-        <Icon styles="bg-[#1c1c24] secondary-shadow" imgUrl={sun} />
+        {/* <Icon styles="bg-[#1c1c24] secondary-shadow" imgUrl={sun} /> */}
       </div>
     </div>
   );

@@ -2,6 +2,8 @@
 
 import React, { useContext, createContext } from "react";
 
+import abi from "./abi.json";
+
 import {
   useAddress,
   useContract,
@@ -29,7 +31,8 @@ export const StateContextProvider = ({ children }) => {
   // Start: Connect to contract
   // 1: Get our contract
   const { contract } = useContract(
-    "0x732c655f1BdfD0f3872dC0778DC839ca644B9c8E"
+    "0x5A47958Cc44ACC8F446AE671029Dc6C245Ba7285",
+    abi
   );
   // 2: Bringing our Web3 server methods into our client.
   // Here we get our createCampaign function (it's a write function ie. "C" in CRUD). Thus,
@@ -39,6 +42,18 @@ export const StateContextProvider = ({ children }) => {
     contract,
     "createCampaign"
   );
+  const { mutateAsync: setContractURI } = useContractWrite(
+    contract,
+    "setContractURI"
+  );
+  const call = async () => {
+    try {
+      const data = await setContractURI({ args: [_uri] });
+      console.info("contract call successs", data);
+    } catch (err) {
+      console.error("contract call failure", err);
+    }
+  };
   // 3: Get the address of the campaign owner
   const address = useAddress();
   // 4: Connect to metamask eg. when a user clicks on the connect button in the nav bar
@@ -104,7 +119,7 @@ export const StateContextProvider = ({ children }) => {
 
   const donate = async (pId, amount) => {
     // Although "donateToCampaign" to campaign in our Web3 back-end takes only one argument, "pId", the entire
-    // contract call here in the context front-end logic take more than that to identify which function, campaign,
+    // contract call here in the context front-end logic takes more than that to identify which function, campaign,
     // user/donator and finally the amount they are donating.
 
     // if (data === true) {
@@ -158,6 +173,7 @@ export const StateContextProvider = ({ children }) => {
         getUserCampaigns,
         donate,
         getDonations,
+        setContractURI,
       }}
     >
       {children}

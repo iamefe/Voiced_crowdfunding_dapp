@@ -6,9 +6,14 @@ module.exports = {
     networks: {
       hardhat: {},
       mumbai: {
-        url: "https://polygon-mumbai.infura.io/v3/4458cf4d1689497b9a38b1d6bbf05e78",
+        // url: "https://mumbai.rpc.thirdweb.com",
+        url: "https://polygon-mumbai.g.alchemy.com/v2/0HkkDYKOyZuxBb9yl_oXe52aqgDcX20N",
         accounts: [`0x${process.env.PRIVATE_KEY}`],
       },
+      // sepolia: {
+      //   url: "https://sepolia.rpc.thirdweb.com",
+      //   // accounts: [`0x${process.env.PRIVATE_KEY}`],
+      // },
     },
     settings: {
       optimizer: {
