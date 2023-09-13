@@ -3,8 +3,7 @@
   "scripts": {
     "build": "npx thirdweb@latest detect",
     "deploy": "npx thirdweb@latest deploy",
-    "release": "npx thirdweb@latest release",
-    "postinstall": "npx --yes thirdweb@latest generate"
+    "release": "npx thirdweb@latest release"
   },
   "devDependencies": {
     "hardhat": "^2.10.1"
