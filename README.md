@@ -1,5 +1,5 @@
 # Voiced_crowdfunding_dapp
-A crowding funding dapp built wih Solidity and React
+A crowdingfunding dapp built wih Solidity and React
 
 ## Live site
 https://voicedcrowd.netlify.app
